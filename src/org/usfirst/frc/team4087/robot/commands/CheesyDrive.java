@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4087.robot.commands;
 
 import org.usfirst.frc.team4087.robot.*;
-import org.usfirst.frc.team4087.robot.subsystems.Drivebase;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 

@@ -7,7 +7,6 @@
 
 package org.usfirst.frc.team4087.robot;
 
-import org.usfirst.frc.team4087.robot.commands.CheesyDrive;
 import org.usfirst.frc.team4087.robot.subsystems.Drivebase;
 
 import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
@@ -16,11 +15,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
 	public static OI oi;
