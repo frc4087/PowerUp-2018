@@ -8,14 +8,14 @@
 package org.usfirst.frc.team4087.robot;
 
 public enum RobotMap {
-	//Drivebase Mappings
+	//Drive base Mappings, CAN
 	LEFT_MOTOR(0), 
 	RIGHT_MOTOR(1), 
 	LEFT_SLAVE(2),
 	RIGHT_SLAVE(3),
 	//Control Mappings
 	DRIVE_JOYSTICK(0),
-	RIGHT_JOYSTICK(1);
+	CONTROL_JOYSTICK(1);
 
 	public final int value;
 

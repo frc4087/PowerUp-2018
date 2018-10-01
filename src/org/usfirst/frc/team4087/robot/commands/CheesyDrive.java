@@ -17,11 +17,10 @@ public class CheesyDrive extends Command {
 	}
 	
 	protected void execute() {
-		double throttle = (1.0 - Robot.oi.DRIVE_JOY.getThrottle() / -2.0);
+		double Dthrottle = (1.0 - Robot.oi.DRIVE_JOY.getThrottle() / -2.0);
 		
-		Robot.drivebase.curvatureDrive(ControlMode.PercentOutput, Robot.oi.getLeftJoyY() * throttle,Robot.oi.getLeftJoyX() * throttle);
+		Robot.drivebase.curvatureDrive(ControlMode.PercentOutput, Robot.oi.getDriveJoyYL() * Dthrottle,Robot.oi.getDriveJoyXR() * Dthrottle);
 		
-		//new comment
 	}
 	@Override
 	protected boolean isFinished() {
