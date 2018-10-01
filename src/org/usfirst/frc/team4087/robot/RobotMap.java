@@ -9,10 +9,10 @@ package org.usfirst.frc.team4087.robot;
 
 public enum RobotMap {
 	//Drive base Mappings, CAN
-	LEFT_MOTOR(0), 
+	LEFT_MOTOR(5), 
 	RIGHT_MOTOR(1), 
-	LEFT_SLAVE(2),
-	RIGHT_SLAVE(3),
+	LEFT_SLAVE(6),
+	RIGHT_SLAVE(2),
 	//Control Mappings
 	DRIVE_JOYSTICK(0),
 	CONTROL_JOYSTICK(1);
