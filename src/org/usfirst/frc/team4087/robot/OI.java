@@ -17,9 +17,9 @@ public class OI {
 
 	/*
 	Axis indexes:
-	1 - LeftX
-	2 - LeftY
-	3 - Triggers (Each trigger = 0 to 1, axis value = right - left)
+	0 - LeftX
+	1 - LeftY
+	2,3 - Triggers (Each trigger = 0 to 1, axis value = right - left)
 	4 - RightX
 	5 - RightY
 	6 - DPad Left/Right
@@ -38,12 +38,12 @@ public class OI {
 	}
 
 	public double getDriveJoyXR() {
-		double raw = DRIVE_JOY.getRawAxis(3);
+		double raw = DRIVE_JOY.getRawAxis(4);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getDriveJoyYR() {
-		double raw = DRIVE_JOY.getRawAxis(4);
+		double raw = DRIVE_JOY.getRawAxis(5);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
@@ -58,12 +58,12 @@ public class OI {
 	}
 
 	public double getControlJoyXR() {
-		double raw = CONTROL_JOY.getRawAxis(3);
+		double raw = CONTROL_JOY.getRawAxis(4);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getControlJoyYR() {
-		double raw = CONTROL_JOY.getRawAxis(4);
+		double raw = CONTROL_JOY.getRawAxis(5);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 

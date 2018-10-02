@@ -11,23 +11,25 @@ public class CheesyDrive extends Command {
 	public CheesyDrive() {
 		requires(Robot.drivebase);
 	}
-	
+
 	protected void initialize() {
-		
+
 	}
-	
+
 	protected void execute() {
 		double Dthrottle = (1.0 - Robot.oi.DRIVE_JOY.getThrottle() / -2.0);
-		
-		Robot.drivebase.arcadeDrive(ControlMode.PercentOutput, Robot.oi.getDriveJoyYL() * Dthrottle,Robot.oi.getDriveJoyXR() * Dthrottle);
-		
+
+		Robot.drivebase.arcadeDrive(ControlMode.PercentOutput, Robot.oi.getDriveJoyYL() * Dthrottle,
+				Robot.oi.getDriveJoyXR() * Dthrottle);
+
 	}
+
 	@Override
 	protected boolean isFinished() {
-		
+
 		return false;
 	}
-	
+
 	protected void interrupted() {
 		end();
 	}

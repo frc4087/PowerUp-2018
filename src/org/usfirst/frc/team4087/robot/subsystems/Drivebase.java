@@ -30,12 +30,12 @@ public class Drivebase extends Subsystem {
 		RightMotorSlave.follow(RightMotor);
 
 	}
-
-	public void arcadeDrive(ControlMode percentoutput, double leftvalue, double rightvalue) {
+	
+	public void arcadeDrive(ControlMode percentoutput, double throttleValue, double turnValue) {
 		
-		LeftMotor.set(percentoutput, leftvalue);
-		RightMotor.set(percentoutput, rightvalue);
-
+		throttleValue = Robot.oi.getDriveJoyYL();
+		turnValue = Robot.oi.getDriveJoyXR();
+		
 	}
 
 	@Override

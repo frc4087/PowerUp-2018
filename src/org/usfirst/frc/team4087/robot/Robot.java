@@ -20,8 +20,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
 	public static OI oi;
 	public static Drivebase drivebase;
-	
-	
+
 	@Override
 	public void robotInit() {
 		oi = new OI();
@@ -50,7 +49,6 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		
 
 	}
 
@@ -62,7 +60,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void testPeriodic() {
 	}
-	
+
 	public static void initTalon(TalonSRX motor) {
 		motor.setNeutralMode(NeutralMode.Brake);
 		motor.neutralOutput();
