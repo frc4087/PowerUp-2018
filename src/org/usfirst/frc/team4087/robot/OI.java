@@ -28,42 +28,42 @@ public class OI {
 	 */
 	
 	public double getDriveJoyXL() {
-		double raw = DRIVE_JOY.getRawAxis(1);
+		double raw = DRIVE_JOY.getRawAxis(0);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getDriveJoyYL() {
-		double raw = DRIVE_JOY.getRawAxis(2);
+		double raw = DRIVE_JOY.getRawAxis(1);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getDriveJoyXR() {
-		double raw = DRIVE_JOY.getRawAxis(4);
+		double raw = DRIVE_JOY.getRawAxis(3);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getDriveJoyYR() {
-		double raw = DRIVE_JOY.getRawAxis(5);
+		double raw = DRIVE_JOY.getRawAxis(4);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getControlJoyXL() {
-		double raw = CONTROL_JOY.getRawAxis(1);
+		double raw = CONTROL_JOY.getRawAxis(0);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getControlJoyYL() {
-		double raw = CONTROL_JOY.getRawAxis(2);
+		double raw = CONTROL_JOY.getRawAxis(1);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getControlJoyXR() {
-		double raw = CONTROL_JOY.getRawAxis(4);
+		double raw = CONTROL_JOY.getRawAxis(3);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 
 	public double getControlJoyYR() {
-		double raw = CONTROL_JOY.getRawAxis(5);
+		double raw = CONTROL_JOY.getRawAxis(4);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
 

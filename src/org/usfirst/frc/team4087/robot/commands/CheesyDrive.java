@@ -19,7 +19,7 @@ public class CheesyDrive extends Command {
 	protected void execute() {
 		double Dthrottle = (1.0 - Robot.oi.DRIVE_JOY.getThrottle() / -2.0);
 		
-		Robot.drivebase.curvatureDrive(ControlMode.PercentOutput, Robot.oi.getDriveJoyYL() * Dthrottle,Robot.oi.getDriveJoyXR() * Dthrottle);
+		Robot.drivebase.arcadeDrive(ControlMode.PercentOutput, Robot.oi.getDriveJoyYL() * Dthrottle,Robot.oi.getDriveJoyXR() * Dthrottle);
 		
 	}
 	@Override
