@@ -31,10 +31,10 @@ public class Drivebase extends Subsystem {
 
 	}
 	
-	public void arcadeDrive(ControlMode percentoutput, double throttleValue, double turnValue) {
+	public void tankDrive(ControlMode percentoutput, double leftValue, double rightValue) {
 		
-		throttleValue = Robot.oi.getDriveJoyYL();
-		turnValue = Robot.oi.getDriveJoyXR();
+		LeftMotor.set(percentoutput, -leftValue);
+		RightMotor.set(percentoutput, rightValue);
 		
 	}
 

@@ -8,6 +8,7 @@
 package org.usfirst.frc.team4087.robot;
 
 import org.usfirst.frc.team4087.robot.subsystems.Drivebase;
+import org.usfirst.frc.team4087.robot.subsystems.Winch;
 
 import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
 import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
@@ -20,11 +21,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
 	public static OI oi;
 	public static Drivebase drivebase;
+	public static Winch winch;
 
 	@Override
 	public void robotInit() {
 		oi = new OI();
 		drivebase = new Drivebase();
+		winch = new Winch();
 	}
 
 	@Override
@@ -69,7 +72,6 @@ public class Robot extends TimedRobot {
 		motor.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyOpen, 0);
 		motor.configNominalOutputForward(0.0, 0);
 		motor.configNominalOutputReverse(0.0, 0);
-		motor.configClosedloopRamp(0.5, 0);
 
 	}
 }
