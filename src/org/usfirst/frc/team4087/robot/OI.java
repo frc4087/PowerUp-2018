@@ -10,7 +10,7 @@ package org.usfirst.frc.team4087.robot;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class OI {
-	public static final double JOY_DEADZONE = 0.05;
+	public static final double JOY_DEADZONE = 0.1;
 
 	public final Joystick DRIVE_JOY = new Joystick(RobotMap.DRIVE_JOYSTICK.value);
 	public final Joystick CONTROL_JOY = new Joystick(RobotMap.CONTROL_JOYSTICK.value);
