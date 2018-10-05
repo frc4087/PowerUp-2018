@@ -1,13 +1,11 @@
 package org.usfirst.frc.team4087.robot.commands;
 
-import java.io.Console;
 
 import org.usfirst.frc.team4087.robot.Robot;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class WinchDrive extends Command {
 
@@ -25,8 +23,16 @@ public class WinchDrive extends Command {
 
 	protected void execute() {
 		
-		setpoint =+ (Robot.oi.getControlJoyYL()) * -800;
-		Robot.winch.winchPID(ControlMode.Position, setpoint);
+		if (Robot.oi.getControlJoyYL()>0 || Robot.oi.getControlJoyYL()<0) {
+
+		Robot.winch.winchControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYL());
+		
+		}
+		else {
+			
+						
+		}
+		
 
 	}
 

@@ -42,14 +42,17 @@ public class Winch extends Subsystem {
 		
 	}
 	
-	public void winchPID(ControlMode position, double setpoint) {
+	public void winchControl(ControlMode mode, double target) {
 		
-		setpoint += Robot.oi.getControlJoyYL()*-800;
-		W_Master.set(position, setpoint);
-		//W_Master.setSetpoint(W_Master.getSetpoint() + Robot.oi.getControlJoyYL()*-800);
+		W_Master.set(mode, target);
 
+		//setpoint += Robot.oi.getControlJoyYL()*-800;
+		//W_Master.set(position, setpoint);
+		//W_Master.setSetpoint(W_Master.getSetpoint() + Robot.oi.getControlJoyYL()*-800);
 		
 	}
+	
+	
 
 	@Override
 	protected void initDefaultCommand() {
