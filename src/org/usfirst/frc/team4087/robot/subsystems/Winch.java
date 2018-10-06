@@ -46,9 +46,12 @@ public class Winch extends Subsystem {
 		
 		W_Master.set(mode, target);
 
-		//setpoint += Robot.oi.getControlJoyYL()*-800;
-		//W_Master.set(position, setpoint);
-		//W_Master.setSetpoint(W_Master.getSetpoint() + Robot.oi.getControlJoyYL()*-800);
+		
+	}
+	
+	public double getWinchPosition() {
+		
+		return W_Master.getSelectedSensorPosition(0);
 		
 	}
 	

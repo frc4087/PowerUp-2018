@@ -23,13 +23,14 @@ public class WinchDrive extends Command {
 
 	protected void execute() {
 		
-		if (Robot.oi.getControlJoyYL()>0 || Robot.oi.getControlJoyYL()<0) {
+		if (Math.abs(Robot.oi.getControlJoyYL())>0) {
 
 		Robot.winch.winchControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYL());
 		
 		}
 		else {
 			
+		Robot.winch.winchControl(ControlMode.Position, Robot.winch.getWinchPosition());
 						
 		}
 		
