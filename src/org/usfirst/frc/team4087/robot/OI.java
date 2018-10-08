@@ -66,7 +66,7 @@ public class OI {
 		double raw = CONTROL_JOY.getRawAxis(5);
 		return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
 	}
-
+	
 	public OI() {
 
 	}

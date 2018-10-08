@@ -1,19 +1,20 @@
 package org.usfirst.frc.team4087.robot.commands;
 
+
 import org.usfirst.frc.team4087.robot.Robot;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class WinchDrive extends Command {
+public class WristDrive extends Command {
 
-	public final double W_UpperLimit = -34000;
-	//public final double W_LowerLimit = 100;
+	public final double W_UpperLimit = -6000;
+	public final double W_LowerLimit = 0;
 	public double finalPosition;
 
-	public WinchDrive() {
-		requires(Robot.winch);
+	public WristDrive() {
+		requires(Robot.wrist);
 	}
 
 	protected void initialize() {
@@ -21,16 +22,17 @@ public class WinchDrive extends Command {
 	}
 
 	protected void execute() {
+		
 
 		//if (Math.abs(Robot.oi.getControlJoyYL()) > 0 && Robot.winch.getWinchPosition() >= W_UpperLimit &&  Robot.winch.getWinchPosition() <= W_LowerLimit) {
-		if (Math.abs(Robot.oi.getControlJoyYL()) > 0 && Robot.winch.getWinchPosition() >= W_UpperLimit) {
+		if (Math.abs(Robot.oi.getControlJoyYR()) > 0 && Robot.wrist.getWristPosition() >= W_UpperLimit) {
 
-			Robot.winch.winchControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYL());
-			finalPosition = Robot.winch.getWinchPosition();
+			Robot.wrist.wristControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYR()/2);
+			finalPosition = Robot.wrist.getWristPosition();
 
 		} else {
 
-			Robot.winch.winchControl(ControlMode.Position, finalPosition);
+			Robot.wrist.wristControl(ControlMode.Position, finalPosition);
 
 		}
 	
@@ -44,6 +46,8 @@ public class WinchDrive extends Command {
 			finalPosition = W_LowerLimit;
 		}
 		*/
+		
+
 	}
 
 	@Override

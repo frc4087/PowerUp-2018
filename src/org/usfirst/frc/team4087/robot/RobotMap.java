@@ -16,6 +16,8 @@ public enum RobotMap {
 	//Elevator Mappings
 	WINCH_MASTER(3),
 	WINCH_SLAVE(7),
+	//Wrist Mappings
+	WRIST(9),
 	//Control Mappings
 	DRIVE_JOYSTICK(0),
 	CONTROL_JOYSTICK(1);

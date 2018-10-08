@@ -4,6 +4,7 @@ import org.usfirst.frc.team4087.robot.Robot;
 import org.usfirst.frc.team4087.robot.RobotMap;
 import org.usfirst.frc.team4087.robot.commands.WinchDrive;
 
+import com.ctre.phoenix.ErrorCode;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -20,7 +21,7 @@ public class Winch extends Subsystem {
 	
 	public final double W_UpperLimit = 35000;
 	public final double W_LowerLimit = 0;
-	private final double kP = 0.5;
+	private final double kP = 0.25;
 	private final double kI = 1E-5;
 	private final double kD = 1E-5;
 	
@@ -51,7 +52,7 @@ public class Winch extends Subsystem {
 	
 	public double getWinchPosition() {
 		
-		return W_Master.getSelectedSensorPosition(0);
+		return W_Master.getSelectedSensorPosition();
 		
 	}
 	

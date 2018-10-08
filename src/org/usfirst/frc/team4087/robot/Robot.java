@@ -9,6 +9,7 @@ package org.usfirst.frc.team4087.robot;
 
 import org.usfirst.frc.team4087.robot.subsystems.Drivebase;
 import org.usfirst.frc.team4087.robot.subsystems.Winch;
+import org.usfirst.frc.team4087.robot.subsystems.Wrist;
 
 import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
 import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
@@ -22,12 +23,14 @@ public class Robot extends TimedRobot {
 	public static OI oi;
 	public static Drivebase drivebase;
 	public static Winch winch;
+	public static Wrist wrist;
 
 	@Override
 	public void robotInit() {
 		oi = new OI();
 		drivebase = new Drivebase();
 		winch = new Winch();
+		wrist = new Wrist();
 	}
 
 	@Override
@@ -58,6 +61,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		System.out.println("Position: " + Robot.winch.getWinchPosition());
 	}
 
 	@Override
@@ -74,4 +78,5 @@ public class Robot extends TimedRobot {
 		motor.configNominalOutputReverse(0.0, 0);
 
 	}
+	
 }
