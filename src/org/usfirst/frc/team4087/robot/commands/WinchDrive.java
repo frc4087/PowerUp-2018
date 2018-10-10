@@ -11,6 +11,8 @@ public class WinchDrive extends Command {
 	public final double W_UpperLimit = -34000;
 	//public final double W_LowerLimit = 100;
 	public double finalPosition;
+	public double finalDirection;
+	public double finalVelocity;
 
 	public WinchDrive() {
 		requires(Robot.winch);
@@ -27,10 +29,13 @@ public class WinchDrive extends Command {
 
 			Robot.winch.winchControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYL());
 			finalPosition = Robot.winch.getWinchPosition();
+			finalDirection = Math.signum(Robot.oi.getControlJoyYL());
+			finalVelocity = Robot.oi.getControlJoyYL();
+			
 
 		} else {
 
-			Robot.winch.winchControl(ControlMode.Position, finalPosition);
+			Robot.winch.winchControl(ControlMode.Position, finalPosition+6000*(.5*(finalDirection-1)*(-finalVelocity)));
 
 		}
 	

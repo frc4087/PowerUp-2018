@@ -12,6 +12,8 @@ public class WristDrive extends Command {
 	public final double W_UpperLimit = -6000;
 	public final double W_LowerLimit = 0;
 	public double finalPosition;
+	public double finalDirection;
+	public double finalVelocity;
 
 	public WristDrive() {
 		requires(Robot.wrist);
@@ -29,10 +31,13 @@ public class WristDrive extends Command {
 
 			Robot.wrist.wristControl(ControlMode.PercentOutput, Robot.oi.getControlJoyYR()/2);
 			finalPosition = Robot.wrist.getWristPosition();
+			finalDirection = Math.signum(Robot.oi.getControlJoyYR());
+			finalVelocity = Robot.oi.getControlJoyYR();
+			
 
 		} else {
 
-			Robot.wrist.wristControl(ControlMode.Position, finalPosition);
+			Robot.wrist.wristControl(ControlMode.Position, finalPosition+1200*(finalVelocity));
 
 		}
 	
