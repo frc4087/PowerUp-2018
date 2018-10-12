@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4087.robot;
 
+import org.usfirst.frc.team4087.robot.commands.WinchDrive;
 import org.usfirst.frc.team4087.robot.subsystems.Drivebase;
 import org.usfirst.frc.team4087.robot.subsystems.Winch;
 import org.usfirst.frc.team4087.robot.subsystems.Wrist;
@@ -61,7 +62,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		System.out.println("Position: " + Robot.winch.getWinchPosition());
+		//System.out.println("Setpoint: ");
 	}
 
 	@Override

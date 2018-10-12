@@ -21,9 +21,7 @@ public class Winch extends Subsystem {
 	
 	public final double W_UpperLimit = 35000;
 	public final double W_LowerLimit = 0;
-	private final double kP = 0.25;
-	private final double kI = 1E-5;
-	private final double kD = 1E-5;
+
 	
 	public Winch() {
 		
@@ -34,12 +32,7 @@ public class Winch extends Subsystem {
 		Robot.initTalon(W_Slave);		
 		
 		W_Slave.follow(W_Master);
-		
-		W_Master.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, timeoutMS);
-		W_Master.setSensorPhase(true);
-		W_Master.config_kP(0, kP, timeoutMS);
-		W_Master.config_kI(0, kI, timeoutMS);
-		W_Master.config_kD(0, kD, timeoutMS);
+
 		
 	}
 	
